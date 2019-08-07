@@ -2,7 +2,7 @@
 //#include"listCpp.h"
 #include"listCpp3.h"
 #include"Student.h"
-
+//test program
 int main(int argv, char *argc[])
 {
 	Student s;
@@ -12,7 +12,6 @@ int main(int argv, char *argc[])
 	while (--i) 
 	{
 		infs >> s;
-		//list->add(s);
 		list->insAtEnd(s);
 	}
 	infs >> s;
