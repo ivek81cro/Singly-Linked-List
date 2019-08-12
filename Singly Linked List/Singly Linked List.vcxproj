@@ -121,14 +121,11 @@
     <Text Include="input.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Cpp-part\listCpp.h" />
-    <ClInclude Include="Cpp-part\listCpp2.h" />
-    <ClInclude Include="Cpp-part\listCpp3.h" />
-    <ClInclude Include="Cpp-part\Student.h" />
+    <ClCompile Include="C-part\Linked_list.c" />
+    <ClCompile Include="C-part\ListCmain.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Cpp-part\listCppMain.cpp" />
-    <ClCompile Include="Cpp-part\Student.cpp" />
+    <ClInclude Include="C-part\listC.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
