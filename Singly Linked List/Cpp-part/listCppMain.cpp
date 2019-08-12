@@ -24,4 +24,5 @@ int main(int argv, char *argc[])
 	list->remove(s);
 	list->print();
 	delete list;
+	list = nullptr;
 }
