@@ -19,7 +19,7 @@ list_t list_new()
 {
 	list_t list = malloc(sizeof(struct list_tag));
 	if (list == NULL)
-		return -1;//ne znam sta da ovdije stavim za return jer vraca listu
+		return -1;//!!!ne znam sta da ovdije stavim za return jer vraca listu!!!
 	list->m_head = NULL;
 	list->m_size = 0;
 	return list; 
