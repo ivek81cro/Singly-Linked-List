@@ -18,7 +18,9 @@ int main(void) {
 	printf("\n%s\n", list_ifExists_element(list, 5) ? "Exists" : "Doesn't exist");
 
 	list_t list2 = list_new();
-	list_insert_at(list2, 45 , 0);
+	list_push(list2, 40);
+	list_push(list2, 41);
+	list_insert_at(list2, 45 , 1);
 	list_print(list2);
 
 	list_delete(list);

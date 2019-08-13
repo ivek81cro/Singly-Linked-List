@@ -17,9 +17,9 @@ struct list_tag
 //create new list
 list_t list_new() 
 {
-	list_t list = malloc(sizeof(struct list_tag));
+	list_t list = (struct list_tag*)malloc(sizeof(struct list_tag));
 	if (list == NULL)
-		return -1;//!!!ne znam sta da ovdije stavim za return jer vraca listu!!!
+		return NULL;//!!!ne znam sta da ovdije stavim za return jer vraca listu!!!
 	list->m_head = NULL;
 	list->m_size = 0;
 	return list; 
@@ -49,9 +49,10 @@ int list_push(list_t list, list_element_t elem)
 	node->m_next = list->m_head;
 	list->m_head = node;
 	++list->m_size;
+	return 0;
 }
 //insert element at position pos
-void list_insert_at(list_t list, list_element_t elem, int pos) 
+int list_insert_at(list_t list, list_element_t elem, int pos) 
 {
 	struct Node *node = (struct Node*)malloc(sizeof(struct Node));	
 	if (node == NULL)
@@ -63,11 +64,13 @@ void list_insert_at(list_t list, list_element_t elem, int pos)
 		node->m_next = NULL;
 		list->m_head = node;
 		++list->m_size;
+		return 0;
 	}
 
 	else if (!list->m_size && pos != 0) 
 	{
-		return;
+		free(node);
+		return -1;
 	}
 
 	else 
@@ -80,22 +83,29 @@ void list_insert_at(list_t list, list_element_t elem, int pos)
 		}
 		node->m_next = prevNode->m_next;
 		prevNode->m_next = node;
+		return 0;
 	}
+	return -1;
 }
 
 //print all elements of list
-void list_print(list_t list)
+int list_print(list_t list)
 {
+	if (list->m_head == NULL)
+		return -1;
 	struct Node *node = list->m_head;
 	while (node != NULL)	{
 		printf(" %d ", node->m_data);
 		node = node->m_next;
 	}
+	return 0;
 }
 
 //check if exists element, returns 1 if true
 int list_ifExists_element(list_t list, list_element_t elem) 
 {
+	if (list->m_head == NULL)
+		return -1;
 	struct Node *node = list->m_head;
 	while (node != NULL) 
 	{
@@ -129,7 +139,7 @@ int list_delete_element(list_t list, int index)
 	//Node m_next from one to be deleted
 	struct Node *m_next = temp->m_next->m_next;
 	free(temp->m_next);
-	temp = NULL;
+	temp->m_next = NULL;
 	temp->m_next = m_next;
 	list->m_size--;
 	return 0;
