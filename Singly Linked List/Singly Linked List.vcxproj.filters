@@ -20,16 +20,25 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C-part\Linked_list.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C-part\ListCmain.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="C-part\listC.h">
+    <ClInclude Include="Cpp-part\listCpp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Cpp-part\listCpp2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpp-part\listCpp3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpp-part\Student.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Cpp-part\listCppMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpp-part\Student.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
