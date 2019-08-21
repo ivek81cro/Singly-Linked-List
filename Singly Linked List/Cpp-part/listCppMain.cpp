@@ -7,7 +7,8 @@ int main(int argv, char *argc[])
 {
 	Student s;
 	LinkedList<Student> *list = new LinkedList<Student>();
-	if (list == nullptr) return -1;
+	if (!list) return -1;
+
 	std::ifstream infs(argc[1]);
 	int i{ 4 };
 	while (--i) 
@@ -15,8 +16,9 @@ int main(int argv, char *argc[])
 		infs >> s;
 		list->insAtEnd(s);
 	}
+	list->print();
 	infs >> s;
-	list->insAtPosition(1, s);
+	list->insAtPosition(2, s);
 	infs >> s;
 	list->insAtEnd(s);
 	infs.close();	
